@@ -1,0 +1,18 @@
+﻿<Window x:Class="KonteneryApp.WrapPanelWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KonteneryApp"
+        mc:Ignorable="d"
+        Title="WrapPanelWindow" Height="396" Width="707">
+    <WrapPanel>
+        <Button Content="Pierwszy Przycisk"/>
+        <Button Content="Drugi Przycisk"
+                Width="120"/>
+        <Button Content="Trzeci Przycisk"
+                Height="60"/>
+        <Button Content="Czwarty Przycisk"/>
+        <Button Content="Piąty Przycisk"/>
+    </WrapPanel>
+</Window>

@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Configuration;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -15,7 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace BindowanieWpfAppp
+namespace BindowanieWpfApp
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -23,38 +23,41 @@ namespace BindowanieWpfAppp
     public partial class MainWindow : Window, INotifyPropertyChanged
     {
         public string SourceValue { get; set; }
-        public string StringNumberOfDay { get; set; }
-        
+
+        //propertisy do obsługo zadania z dniem tygodnia
+        public string StringNumberOfWeek { get; set; }
+
+        private string nameDayOfWeek;
         public string NameDayOfWeek
-        { 
+        {
             get
             {
-                return NameDayOfWeek;
+                return nameDayOfWeek;
             }
             set
             {
-                NameDayOfWeek = value;
+                nameDayOfWeek = value;
+                //OnPropertyChanged("NameDayOfWeek");
+                //OnPropertyChanged(nameof(NameDayOfWeek));
+                OnPropertyChanged();
             }
-       
-        
         }
-
-
-
 
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        #region informowanie bindowania
 
-        public void OnPropertyChanged(string propertyName)
+        public event PropertyChangedEventHandler? PropertyChanged;
+
+        public void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-
         }
 
+        #endregion
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -75,36 +78,24 @@ namespace BindowanieWpfAppp
 
         private void ButtonShowDayOfWeek_Click(object sender, RoutedEventArgs e)
         {
-            switch (StringNumberOfDay)
+            switch (StringNumberOfWeek)
             {
                 case "1":
-                    NameDayOfWeek = "Poniedzialek";
-                    OnPropertyChanged("NameDayOfWeek");
+                    NameDayOfWeek = "Poniedziałek";
+                    //OnPropertyChanged("NameDayOfWeek");
                     break;
                 case "2":
                     NameDayOfWeek = "Wtorek";
+                    //OnPropertyChanged("NameDayOfWeek");
                     break;
                 case "3":
                     NameDayOfWeek = "Środa";
-                    break;
-                case "4":
-                    NameDayOfWeek = "Czwartek";
-                    break;
-                case "5":
-                    NameDayOfWeek = "Piątek";
+                    //OnPropertyChanged(nameof(NameDayOfWeek));
                     break;
                 default:
                     NameDayOfWeek = "Zła dana";
                     break;
-
-
-
-
-
-
-
             }
         }
     }
 }
-

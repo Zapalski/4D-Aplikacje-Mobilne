@@ -24,11 +24,12 @@ namespace CalculatorBMI
         }
         private void CalculateBMI_Click(object sender, RoutedEventArgs e)
         {
-            if (double.TryParse(WeightTextBox.Text, out double weight) && double.TryParse(HeightTextBox.Text, out double height))
+            if (double.TryParse(WeightTextBox.Text, out double weight) 
+                && double.TryParse(HeightTextBox.Text, out double height))
             {
                 height = height / 100;
                 double bmi = weight / (height * height);
-                string resultText = $"Twoje BMI wynosi: {bmi:F2}. ";
+                string resultText = $"Twoje BMI wynosi: {bmi:F2} ";
 
                 if (bmi < 16)
                 {

@@ -8,20 +8,12 @@
                 Title="CalculatorBMI" Height="450" Width="800" Foreground="Black">
     <Grid>
         <StackPanel Background="Gray" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" Width="472">
-            <StackPanel.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="0.12"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </StackPanel.RenderTransform>
 
             <TextBlock Text="Kalkulator BMI"
-            TextAlignment="Center"
-            FontSize="35"
-            FontWeight="Bold"
-            Foreground="Black"/>
+                       TextAlignment="Center"
+                       FontSize="35"
+                       FontWeight="Bold"
+                       Foreground="Black"/>    
 
             <DockPanel Margin="13">
                 <TextBlock Width="115" FontSize="19">Waga w kg:</TextBlock>

@@ -24,23 +24,25 @@ namespace ListaRzeczy.wpf
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            string newItem = itemTextBox.Text.Trim();
+            string newItem = DaneTextBox.Text.Trim();
 
             if (!string.IsNullOrEmpty(newItem))
             {
-                ListaZakupow.Items.Add(newItem);
-                itemTextBox.Clear();
+                ListaZakupow.Items.Add($"- {newItem}");
+                DaneTextBox.Clear();
             }
         }
 
         private void RemoveButton_Click(object sender, RoutedEventArgs e)
-        {
-            var selectedItems = ListaZakupow.SelectedItems.Cast<string>().ToList();
 
-            foreach (var selectedItem in selectedItems)
+
+        {
+            string selectedItem = ListaZakupow.SelectedItem as string;
+            if (!string.IsNullOrEmpty(selectedItem))
             {
                 ListaZakupow.Items.Remove(selectedItem);
             }
-        }
+
+}     
     }
 }

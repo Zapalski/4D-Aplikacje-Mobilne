@@ -8,23 +8,31 @@
         Title="ListaZakupow" Height="484" Width="500">
     <Grid Background="GreenYellow">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
+            <ColumnDefinition/> 
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <StackPanel Background="GreenYellow"    Margin="10,10,10,10" Grid.ColumnSpan="2">
-            <TextBlock Name="TextBox" Margin="0,0,0,10" Text="Twoja Lista Zakupów" 
+        <StackPanel Background="GreenYellow" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,10,10,10" Grid.ColumnSpan="2">
+            
+            <TextBlock Name="TextBox" Margin="0,0,0,10" 
+                       Text="Twoja Lista Zakupów" 
                        Height="63" FontSize="40" 
                        Background="LawnGreen"
                        TextAlignment="Center" 
                        FontStyle="Italic"/>
             <TextBlock Name="TextBoxDrugi" Margin="0,0,0,10" Text="Wprowadz swój przedmiot:" 
-                       Height="30" FontSize="20" 
-                       TextAlignment="Left"
+                       Height="30" 
+                       FontSize="20" 
+                       TextAlignment="Left"                       
                        Background="LightGreen"/>
-            <TextBox Name="itemTextBox" Margin="0,0,0,10" Background="White"/>
+            <TextBox Name="DaneTextBox" Margin="0,0,0,10" Background="White"/>
             <Button Content="Dodaj" Click="AddButton_Click" Margin="0,0,0,10" Height="60"/>
-            <ListBox Name="ListaZakupow" Margin="0,0,0,10" Height="141" Background="White"/>
-            <Button Content="Usuń zaznaczone" Click="RemoveButton_Click" Height="60" RenderTransformOrigin="0.503,-0.193"/>
+            <ListBox Name="ListaZakupow" Margin="0,0,0,10" 
+                     Height="141" 
+                     Background="White"/>
+            <Button Content="Usuń zaznaczone" 
+                    Click="RemoveButton_Click" 
+                    Height="60" 
+                    RenderTransformOrigin="0.503,-0.193"/>
         </StackPanel>
     </Grid>
 </Window>

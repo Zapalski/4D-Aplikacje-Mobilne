@@ -1,0 +1,26 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+
+xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+x:Class="LogowanieApp.MainPage">
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <Label Text="Rejestruj konto" FontSize="24" TextColor="white" BackgroundColor="#008080" Margin="0,0,0,20"/>
+            <StackLayout>
+                <Label Text="Podaj e-mail:" TextColor="Black"/>
+                <Entry x:Name="EmailEntry" Placeholder="email" Keyboard="Email"/>
+            </StackLayout>
+            <StackLayout>
+                <Label Text="Podaj hasło:" TextColor="Black"/>
+                <Entry x:Name="PasswordEntry1" Placeholder="hasło" IsPassword="True"/>
+            </StackLayout>
+            <StackLayout>
+                <Label Text="Powtórz hasło:" TextColor="Black"/>
+                <Entry x:Name="PasswordEntry2" Placeholder="hasło" IsPassword="True"/>
+            </StackLayout>
+                <Button Text="ZATWIERDZ" Clicked="OnSubmitClicked" HorizontalOptions="Center" Margin="0,20,0,0"/>
+            
+            <Label x:Name="MessageLabel" TextColor="Black" HorizontalOptions="Center" Margin="0,20,0,0"/>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>
